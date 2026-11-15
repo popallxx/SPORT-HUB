@@ -157,7 +157,7 @@ export default function AdminBookings() {
           <p className="text-muted small mb-3">
             Menampilkan {paged.length} dari {filtered.length} booking &middot; halaman {safePage}/{totalPages}
           </p>
-          <div className="table-responsive d-none d-lg-block">
+          <div className="table-responsive d-none d-xxl-block">
             <table className="table align-middle">
               <thead>
                 <tr>
@@ -214,7 +214,7 @@ export default function AdminBookings() {
             </table>
           </div>
 
-          <div className="d-flex flex-column gap-3 d-lg-none">
+          <div className="d-flex flex-column gap-3 d-xxl-none">
             {paged.map((b) => (
               <div key={b.id} className="booking-row-card">
                 <div className="d-flex justify-content-between align-items-center gap-2">

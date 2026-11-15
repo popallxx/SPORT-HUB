@@ -13,6 +13,8 @@ class BookingController extends Controller
 {
     public function index(Request $request): JsonResponse
     {
+        Booking::completePastBookings();
+
         $bookings = Booking::with(['user', 'court', 'payment'])
             ->when($request->query('status'), function ($query, $status) {
                 return $query->where('status', $status);
@@ -29,6 +31,9 @@ class BookingController extends Controller
 
     public function show(Booking $booking): JsonResponse
     {
+        Booking::completePastBookings();
+        $booking->refresh();
+
         $booking->load(['user', 'court', 'payment']);
 
         return response()->json([

@@ -19,7 +19,7 @@ export default function Sidebar({ open, onClose }) {
       <aside className={`admin-sidebar ${open ? 'open' : ''}`} aria-label="Menu admin">
         <Link to="/" className="sidebar-brand">
           <span className="brand-mark">
-            <Icon name="bolt" size={18} strokeWidth={2.4} />
+            <Icon name="court" size={20} strokeWidth={2.1} />
           </span>
           SPORT HUB
         </Link>

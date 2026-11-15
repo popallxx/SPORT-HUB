@@ -118,54 +118,100 @@ export default function AdminUsers() {
           }
         />
       ) : (
-        <div className="table-responsive">
-          <table className="table align-middle">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Joined</th>
-                <th>Total Booking</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((u) => (
-                <tr key={u.id}>
-                  <td>
-                    <div className="d-flex align-items-center gap-2">
-                      <span className="nav-avatar">{firstLetter(u.name)}</span>
-                      <span className="fw-semibold">{u.name}</span>
-                    </div>
-                  </td>
-                  <td className="text-muted">{u.email}</td>
-                  <td>
-                    <span className={`status-badge ${u.role === 'admin' ? 'status-warning' : 'status-info'}`}>
-                      {u.role.toUpperCase()}
-                    </span>
-                  </td>
-                  <td>{formatDate(u.created_at)}</td>
-                  <td>{u.bookings_count}</td>
-                  <td>
-                    <select
-                      className="form-select form-select-sm"
-                      value={u.role}
-                      onChange={(e) => {
-                        if (e.target.value !== u.role) setPendingRole({ user: u, role: e.target.value })
-                      }}
-                      aria-label={`Ubah role ${u.name}`}
-                      style={{ width: 140 }}
-                    >
-                      <option value="user">user</option>
-                      <option value="admin">admin</option>
-                    </select>
-                  </td>
+        <>
+          <div className="table-responsive d-none d-xl-block">
+            <table className="table align-middle">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Joined</th>
+                  <th>Total Booking</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {filtered.map((u) => (
+                  <tr key={u.id}>
+                    <td>
+                      <div className="d-flex align-items-center gap-2">
+                        <span className="nav-avatar">{firstLetter(u.name)}</span>
+                        <span className="fw-semibold">{u.name}</span>
+                      </div>
+                    </td>
+                    <td className="text-muted">{u.email}</td>
+                    <td>
+                      <span className={`status-badge ${u.role === 'admin' ? 'status-warning' : 'status-info'}`}>
+                        {u.role.toUpperCase()}
+                      </span>
+                    </td>
+                    <td>{formatDate(u.created_at)}</td>
+                    <td>{u.bookings_count}</td>
+                    <td>
+                      <select
+                        className="form-select form-select-sm"
+                        value={u.role}
+                        onChange={(e) => {
+                          if (e.target.value !== u.role) setPendingRole({ user: u, role: e.target.value })
+                        }}
+                        aria-label={`Ubah role ${u.name}`}
+                        style={{ width: 140 }}
+                      >
+                        <option value="user">user</option>
+                        <option value="admin">admin</option>
+                      </select>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="d-flex flex-column gap-3 d-xl-none">
+            {filtered.map((u) => (
+              <div key={u.id} className="admin-user-card">
+                <div className="d-flex align-items-center justify-content-between gap-2">
+                  <div className="d-flex align-items-center gap-2 min-w-0">
+                    <span className="nav-avatar flex-shrink-0">{firstLetter(u.name)}</span>
+                    <div className="min-w-0">
+                      <div className="fw-semibold text-truncate">{u.name}</div>
+                      <div className="text-muted small text-break">{u.email}</div>
+                    </div>
+                  </div>
+                  <span
+                    className={`status-badge flex-shrink-0 ${
+                      u.role === 'admin' ? 'status-warning' : 'status-info'
+                    }`}
+                  >
+                    {u.role.toUpperCase()}
+                  </span>
+                </div>
+                <div className="d-flex flex-wrap gap-3 small">
+                  <span>
+                    <span className="text-muted">Joined: </span>
+                    {formatDate(u.created_at)}
+                  </span>
+                  <span>
+                    <span className="text-muted">Total booking: </span>
+                    {u.bookings_count}
+                  </span>
+                </div>
+                <select
+                  className="form-select form-select-sm"
+                  value={u.role}
+                  onChange={(e) => {
+                    if (e.target.value !== u.role) setPendingRole({ user: u, role: e.target.value })
+                  }}
+                  aria-label={`Ubah role ${u.name}`}
+                >
+                  <option value="user">user</option>
+                  <option value="admin">admin</option>
+                </select>
+              </div>
+            ))}
+          </div>
+        </>
       )}
 
       <ConfirmModal

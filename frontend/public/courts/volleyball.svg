@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#10161D"/>
+
+  <rect x="60" y="50" width="10" height="10" fill="#B8FF3D"/>
+  <text x="82" y="60" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#9AA4AF">SPORT HUB</text>
+
+  <g fill="none" stroke="#37424E" stroke-width="2">
+    <rect x="430" y="150" width="320" height="180"/>
+    <line x1="520" y1="150" x2="520" y2="330"/>
+    <line x1="660" y1="150" x2="660" y2="330"/>
+  </g>
+
+  <line x1="590" y1="142" x2="590" y2="338" stroke="#B8FF3D" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="590" cy="142" r="4" fill="#B8FF3D"/>
+  <circle cx="590" cy="338" r="4" fill="#B8FF3D"/>
+
+  <circle cx="700" cy="100" r="26" fill="none" stroke="#B8FF3D" stroke-width="3"/>
+  <path d="M681 82 A 26 26 0 0 1 719 118" fill="none" stroke="#B8FF3D" stroke-width="2"/>
+  <path d="M683 118 A 26 26 0 0 1 719 84" fill="none" stroke="#B8FF3D" stroke-width="2"/>
+
+  <text x="58" y="420" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" letter-spacing="1" fill="#F2F5F0">VOLI</text>
+  <rect x="60" y="438" width="46" height="4" fill="#B8FF3D"/>
+</svg>

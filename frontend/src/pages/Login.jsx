@@ -44,7 +44,7 @@ export default function Login() {
       <div className="auth-form-wrap sh-reveal">
         <div className="d-flex align-items-center gap-2 mb-4 d-lg-none">
           <span className="brand-mark">
-            <Icon name="bolt" size={18} strokeWidth={2.4} />
+            <Icon name="court" size={20} strokeWidth={2.1} />
           </span>
           <span className="fw-bold" style={{ letterSpacing: '0.14em' }}>SPORT HUB</span>
         </div>

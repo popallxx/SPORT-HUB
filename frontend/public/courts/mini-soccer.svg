@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#10161D"/>
+
+  <rect x="60" y="50" width="10" height="10" fill="#B8FF3D"/>
+  <text x="82" y="60" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#9AA4AF">SPORT HUB</text>
+
+  <g fill="none" stroke="#37424E" stroke-width="2">
+    <rect x="420" y="140" width="340" height="220"/>
+    <line x1="590" y1="140" x2="590" y2="360" stroke="#B8FF3D" stroke-width="3"/>
+    <circle cx="590" cy="250" r="38" stroke="#B8FF3D" stroke-width="2"/>
+    <rect x="420" y="185" width="58" height="130"/>
+    <rect x="702" y="185" width="58" height="130"/>
+    <rect x="420" y="215" width="24" height="70"/>
+    <rect x="736" y="215" width="24" height="70"/>
+    <path d="M420 154 A 14 14 0 0 1 434 140"/>
+    <path d="M746 140 A 14 14 0 0 1 760 154"/>
+    <path d="M760 346 A 14 14 0 0 1 746 360"/>
+    <path d="M434 360 A 14 14 0 0 1 420 346"/>
+  </g>
+
+  <circle cx="590" cy="250" r="3" fill="#B8FF3D"/>
+  <rect x="412" y="222" width="8" height="56" fill="#B8FF3D"/>
+  <rect x="780" y="222" width="8" height="56" fill="#B8FF3D"/>
+
+  <text x="58" y="420" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="1" fill="#F2F5F0">MINI SOCCER</text>
+  <rect x="60" y="438" width="46" height="4" fill="#B8FF3D"/>
+</svg>

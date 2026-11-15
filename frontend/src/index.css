@@ -169,6 +169,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-inline: 24px;
 }
 
+.min-w-0 {
+  min-width: 0;
+}
+
 @media (max-width: 576px) {
   .sh-container {
     padding-inline: 16px;
@@ -587,7 +591,10 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--sh-border);
   border-radius: var(--sh-r-md);
   background: var(--sh-card);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 /* ============================================================
@@ -629,10 +636,18 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--sh-border);
 }
 
+.sh-navbar .sh-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .sh-navbar .navbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
   font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -685,6 +700,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sh-navbar .navbar-toggler {
   border-color: var(--sh-border);
+  flex-shrink: 0;
 }
 
 .sh-navbar .navbar-toggler:focus {
@@ -695,12 +711,21 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  max-width: min(240px, 55vw);
+  min-width: 0;
   font-weight: 700;
   color: var(--sh-text);
   background: var(--sh-surface);
   border: 1px solid var(--sh-border);
   border-radius: 999px;
   padding: 4px 14px 4px 4px;
+}
+
+.nav-user-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nav-avatar {
@@ -737,6 +762,12 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .sh-hero {
     padding-block: 56px 48px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sh-hero .row {
+    --bs-gutter-x: 1.5rem;
   }
 }
 
@@ -1128,6 +1159,13 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 14px;
   margin-bottom: 28px;
+}
+
+.admin-topbar-name {
+  max-width: 44vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media (min-width: 992px) {
@@ -1685,7 +1723,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================================================
    Booking list rows (mobile cards)
    ============================================================ */
-.booking-row-card {
+.booking-row-card,
+.admin-user-card {
   background: var(--sh-card);
   border: 1px solid var(--sh-border);
   border-radius: var(--sh-r-md);
@@ -2053,6 +2092,22 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--sh-accent);
 }
 
+@media (max-width: 575.98px) {
+  .filter-pills.segmented {
+    display: flex;
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .filter-pills.segmented .filter-pill {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-inline: 10px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+}
+
 /* ============================================================
    Visual Redesign pass — bolder stepper states
    ============================================================ */
@@ -2159,6 +2214,7 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme='light'] .step-card,
 [data-theme='light'] .booking-hero-card,
 [data-theme='light'] .booking-row-card,
+[data-theme='light'] .admin-user-card,
 [data-theme='light'] .calendar,
 [data-theme='light'] .state-box,
 [data-theme='light'] .auth-card,
@@ -2745,10 +2801,16 @@ h1, h2, h3, h4, h5, h6 {
   gap: 28px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
+  .sh-footer-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (min-width: 992px) {
   .sh-footer-cols {
     grid-template-columns: 1.4fr 1fr 1fr;
-    align-items: start;
   }
 }
 

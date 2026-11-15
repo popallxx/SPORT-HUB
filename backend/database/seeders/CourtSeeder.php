@@ -12,13 +12,19 @@ class CourtSeeder extends Seeder
      */
     public function run(): void
     {
+        // Hanya untuk instalasi baru. Jangan sentuh data lapangan yang
+        // sudah dikelola admin kalau database sudah berisi data.
+        if (Court::query()->exists()) {
+            return;
+        }
+
         $courts = [
             [
                 'name' => 'Lapangan 1',
                 'type' => 'Badminton',
                 'price' => 50000,
                 'description' => 'Lapangan badminton standar dengan lantai vinyl anti licin, jaring berkualitas, dan pencahayaan terang.',
-                'image' => 'https://placehold.co/800x500/1e88e5/ffffff?text=Badminton',
+                'image' => '/courts/badminton.svg',
                 'status' => 'active',
             ],
             [
@@ -26,7 +32,7 @@ class CourtSeeder extends Seeder
                 'type' => 'Futsal',
                 'price' => 100000,
                 'description' => 'Lapangan futsal dengan rumput sintetis, gawang lengkap, dan jaring pengaman di sekelilingnya.',
-                'image' => 'https://placehold.co/800x500/2e7d32/ffffff?text=Futsal',
+                'image' => '/courts/futsal.svg',
                 'status' => 'active',
             ],
             [
@@ -34,7 +40,7 @@ class CourtSeeder extends Seeder
                 'type' => 'Basket',
                 'price' => 120000,
                 'description' => 'Lapangan basket outdoor dengan papan ring besi, garis standar FIBA, dan lantai semen halus.',
-                'image' => 'https://placehold.co/800x500/f57c00/ffffff?text=Basket',
+                'image' => '/courts/basket.svg',
                 'status' => 'active',
             ],
             [
@@ -42,7 +48,7 @@ class CourtSeeder extends Seeder
                 'type' => 'Tenis Meja',
                 'price' => 30000,
                 'description' => 'Meja tenis meja standar internasional lengkap dengan net dan bet.',
-                'image' => 'https://placehold.co/800x500/00838f/ffffff?text=Tenis+Meja',
+                'image' => '/courts/table-tennis.svg',
                 'status' => 'active',
             ],
             [
@@ -50,7 +56,7 @@ class CourtSeeder extends Seeder
                 'type' => 'Voli',
                 'price' => 80000,
                 'description' => 'Lapangan voli dengan pasir dan net standar, cocok untuk voli pantai.',
-                'image' => 'https://placehold.co/800x500/d84315/ffffff?text=Voli',
+                'image' => '/courts/volleyball.svg',
                 'status' => 'active',
             ],
             [
@@ -58,7 +64,7 @@ class CourtSeeder extends Seeder
                 'type' => 'Mini Soccer',
                 'price' => 150000,
                 'description' => 'Lapangan mini soccer berukuran 20x40 meter dengan rumput sintetis premium.',
-                'image' => 'https://placehold.co/800x500/6a1b9a/ffffff?text=Mini+Soccer',
+                'image' => '/courts/mini-soccer.svg',
                 'status' => 'active',
             ],
         ];

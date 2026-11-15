@@ -24,7 +24,9 @@ export default function AdminLayout() {
           </button>
           <div className="d-flex align-items-center gap-2 ms-auto">
             <ThemeToggle compact />
-            <span className="fw-bold d-lg-none" style={{ fontSize: '0.95rem' }}>{user?.name}</span>
+            <span className="fw-bold d-lg-none admin-topbar-name" style={{ fontSize: '0.95rem' }}>
+              {user?.name}
+            </span>
             <span className="nav-avatar d-lg-none">{user?.name?.charAt(0)?.toUpperCase()}</span>
           </div>
         </div>

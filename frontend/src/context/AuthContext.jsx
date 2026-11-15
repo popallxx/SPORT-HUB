@@ -4,11 +4,29 @@ import api from '../services/api'
 
 const AuthContext = createContext(null)
 
-export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
+function readStoredUser() {
+  try {
     const stored = localStorage.getItem('sporthub_user')
-    return stored ? JSON.parse(stored) : null
-  })
+    if (!stored) return null
+
+    const parsed = JSON.parse(stored)
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      throw new Error('Format data user tidak valid')
+    }
+
+    return parsed
+  } catch {
+    try {
+      localStorage.removeItem('sporthub_user')
+    } catch {
+      // localStorage bisa diblokir; abaikan agar aplikasi tetap bisa render.
+    }
+    return null
+  }
+}
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(readStoredUser)
   const [loading, setLoading] = useState(() => !!localStorage.getItem('sporthub_token'))
 
   useEffect(() => {

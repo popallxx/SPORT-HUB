@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#10161D"/>
+
+  <rect x="60" y="50" width="10" height="10" fill="#B8FF3D"/>
+  <text x="82" y="60" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#9AA4AF">SPORT HUB</text>
+
+  <g fill="none" stroke="#37424E" stroke-width="2">
+    <rect x="430" y="120" width="310" height="260"/>
+    <rect x="610" y="200" width="130" height="100"/>
+    <path d="M740 135 A 205 205 0 0 0 740 365"/>
+    <path d="M610 204 A 46 46 0 0 0 610 296"/>
+    <path d="M740 220 A 30 30 0 0 0 740 280"/>
+  </g>
+
+  <line x1="714" y1="212" x2="714" y2="288" stroke="#F2F5F0" stroke-width="3"/>
+  <circle cx="700" cy="250" r="8" fill="#B8FF3D"/>
+  <circle cx="700" cy="250" r="14" fill="none" stroke="#B8FF3D" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <text x="58" y="420" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" letter-spacing="1" fill="#F2F5F0">BASKET</text>
+  <rect x="60" y="438" width="46" height="4" fill="#B8FF3D"/>
+</svg>

@@ -12,6 +12,8 @@ class DashboardController extends Controller
 {
     public function index(): JsonResponse
     {
+        Booking::completePastBookings();
+
         $data = [
             'total_users' => User::count(),
             'total_courts' => Court::count(),

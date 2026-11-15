@@ -28,6 +28,29 @@ class Booking extends Model
 
     protected $appends = ['booking_code'];
 
+    /**
+     * Tandai booking yang sudah dibayar (confirmed) dan waktunya sudah
+     * selesai sebagai completed.
+     */
+    public static function completePastBookings(): int
+    {
+        $now = now();
+
+        return static::query()
+            ->where('status', 'confirmed')
+            ->where(function ($query) use ($now) {
+                $query->where('booking_date', '<', $now->toDateString())
+                    ->orWhere(function ($query) use ($now) {
+                        $query->where('booking_date', $now->toDateString())
+                            ->where('end_time', '<=', $now->format('H:i:s'));
+                    });
+            })
+            ->update([
+                'status' => 'completed',
+                'updated_at' => $now,
+            ]);
+    }
+
     public function getBookingCodeAttribute(): string
     {
         return 'BK-' . str_pad((string) $this->id, 6, '0', STR_PAD_LEFT);

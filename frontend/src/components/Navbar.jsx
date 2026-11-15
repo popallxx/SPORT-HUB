@@ -15,7 +15,7 @@ function Brand() {
   return (
     <Link to="/" className="navbar-brand">
       <span className="brand-mark">
-        <Icon name="bolt" size={18} strokeWidth={2.4} />
+        <Icon name="court" size={20} strokeWidth={2.1} />
       </span>
       SPORT HUB
     </Link>
@@ -26,7 +26,7 @@ export default function Navbar() {
   const { user, logout } = useAuth()
 
   return (
-    <nav className="navbar navbar-expand-lg sh-navbar">
+    <nav className="navbar navbar-expand-xl sh-navbar">
       <div className="sh-container">
         <Brand />
         <button
@@ -70,7 +70,7 @@ export default function Navbar() {
                 <li className="nav-item">
                   <NavLink to="/profile" className="nav-user-chip">
                     <span className="nav-avatar">{firstLetter(user.name)}</span>
-                    {user.name}
+                    <span className="nav-user-name">{user.name}</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">

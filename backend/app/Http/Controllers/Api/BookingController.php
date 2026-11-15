@@ -15,6 +15,8 @@ class BookingController extends Controller
 {
     public function index(Request $request): JsonResponse
     {
+        Booking::completePastBookings();
+
         $bookings = Booking::with(['court', 'payment'])
             ->where('user_id', $request->user()->id)
             ->latest()
@@ -99,6 +101,9 @@ class BookingController extends Controller
 
     public function show(Request $request, Booking $booking): JsonResponse
     {
+        Booking::completePastBookings();
+        $booking->refresh();
+
         if ($booking->user_id !== $request->user()->id && ! $request->user()->isAdmin()) {
             return response()->json([
                 'success' => false,

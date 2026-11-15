@@ -2,6 +2,14 @@ const paths = {
   bolt: (
     <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
   ),
+  court: (
+    <>
+      <rect x="2.5" y="5" width="19" height="14" rx="1.5" />
+      <path d="M12 5v14" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M2.5 8.5h3v7h-3M21.5 8.5h-3v7h3" />
+    </>
+  ),
   grid: (
     <>
       <rect x="3" y="3" width="7" height="7" rx="1.5" />

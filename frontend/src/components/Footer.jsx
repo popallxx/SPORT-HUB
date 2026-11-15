@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <Link to="/" className="navbar-brand" style={{ color: 'var(--sh-text)' }}>
               <span className="brand-mark">
-                <Icon name="bolt" size={18} strokeWidth={2.4} />
+                <Icon name="court" size={20} strokeWidth={2.1} />
               </span>
               SPORT HUB
             </Link>

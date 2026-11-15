@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local agent/tooling files
+.opencode/
+
+# Env & secrets (keep .env.example tracked)
+.env
+.env.*
+!.env.example
+
+# Dependencies & build output
+node_modules/
+vendor/
+dist/
+dist-ssr/
+
+# Logs
+*.log
+
+# PHP tooling
+.phpunit.result.cache
+.phpunit.cache/

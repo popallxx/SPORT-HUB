@@ -1,4 +1,5 @@
 import Icon from './Icon'
+import BrandMark from './BrandMark'
 
 export default function AuthLayout({ children }) {
   return (
@@ -7,9 +8,7 @@ export default function AuthLayout({ children }) {
         <div className="court-line-overlay" aria-hidden="true" />
         <div style={{ position: 'relative' }}>
           <div className="d-flex align-items-center gap-2 mb-4">
-            <span className="brand-mark">
-              <Icon name="court" size={20} strokeWidth={2.1} />
-            </span>
+            <BrandMark />
             <span className="fw-bold" style={{ letterSpacing: '0.14em' }}>SPORT HUB</span>
           </div>
           <h2 className="auth-visual-title mb-3">

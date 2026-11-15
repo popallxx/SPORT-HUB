@@ -662,11 +662,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 34px;
   height: 34px;
   border-radius: var(--sh-r-sm);
-  background: var(--sh-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0b0f14;
+  display: block;
+  object-fit: contain;
   flex-shrink: 0;
 }
 

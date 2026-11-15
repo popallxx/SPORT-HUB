@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Icon from './Icon'
+import BrandMark from './BrandMark'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -10,9 +10,7 @@ export default function Footer() {
         <div className="sh-footer-cols">
           <div>
             <Link to="/" className="navbar-brand" style={{ color: 'var(--sh-text)' }}>
-              <span className="brand-mark">
-                <Icon name="court" size={20} strokeWidth={2.1} />
-              </span>
+              <BrandMark />
               SPORT HUB
             </Link>
             <p className="text-muted mb-0 mt-3" style={{ maxWidth: 380, lineHeight: 1.65 }}>

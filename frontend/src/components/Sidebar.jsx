@@ -1,6 +1,7 @@
 import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import Icon from './Icon'
+import BrandMark from './BrandMark'
 import { firstLetter } from '../utils/format'
 
 const links = [
@@ -18,9 +19,7 @@ export default function Sidebar({ open, onClose }) {
       {open && <div className="sidebar-overlay" onClick={onClose} aria-hidden="true" />}
       <aside className={`admin-sidebar ${open ? 'open' : ''}`} aria-label="Menu admin">
         <Link to="/" className="sidebar-brand">
-          <span className="brand-mark">
-            <Icon name="court" size={20} strokeWidth={2.1} />
-          </span>
+          <BrandMark />
           SPORT HUB
         </Link>
         <nav className="sidebar-nav">

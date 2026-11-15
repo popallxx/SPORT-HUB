@@ -1,6 +1,7 @@
 import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import Icon from './Icon'
+import BrandMark from './BrandMark'
 import ThemeToggle from './ThemeToggle'
 import { firstLetter } from '../utils/format'
 
@@ -14,9 +15,7 @@ const links = [
 function Brand() {
   return (
     <Link to="/" className="navbar-brand">
-      <span className="brand-mark">
-        <Icon name="court" size={20} strokeWidth={2.1} />
-      </span>
+      <BrandMark />
       SPORT HUB
     </Link>
   )

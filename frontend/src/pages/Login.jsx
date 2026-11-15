@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext'
 import { useToast } from '../context/ToastContext'
 import AuthLayout from '../components/AuthLayout'
 import Icon from '../components/Icon'
+import BrandMark from '../components/BrandMark'
 
 export default function Login() {
   const { login } = useAuth()
@@ -43,9 +44,7 @@ export default function Login() {
     <AuthLayout>
       <div className="auth-form-wrap sh-reveal">
         <div className="d-flex align-items-center gap-2 mb-4 d-lg-none">
-          <span className="brand-mark">
-            <Icon name="court" size={20} strokeWidth={2.1} />
-          </span>
+          <BrandMark />
           <span className="fw-bold" style={{ letterSpacing: '0.14em' }}>SPORT HUB</span>
         </div>
         <div className="auth-card">
